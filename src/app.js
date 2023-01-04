@@ -33,9 +33,9 @@ app.use('/', indexRouter);
 app.use(moviesRoutes);
 app.use(genresRoutes);
 //Aquí creo la colección de mis recursos de movies (APIs)
-app.use('/api/movies',apiMoviesRouter);
-app.use('/api/actors',apiActorsRouter);
-app.use('/api/genres',apiGenresRouter);
+app.use('/api/movies', apiMoviesRouter);
+app.use('/api/actors', apiActorsRouter);
+app.use('/api/genres', apiGenresRouter);
 
 
 //Activando el servidor desde express

@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false
     }
-    const Movie = sequelize.define(alias,cols,config);
+    const Movie = sequelize.define(alias, cols, config);
 
     Movie.associate = function (models) {
         Movie.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js

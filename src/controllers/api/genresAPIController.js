@@ -4,8 +4,6 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-
-//Aqui tienen otra forma de llamar a cada uno de los modelos
 const Movies = db.Movie;
 const Genres = db.Genre;
 const Actors = db.Actor;
@@ -15,19 +13,19 @@ const Actors = db.Actor;
 const genresAPIController = {
     'list': (req, res) => {
         db.Genre.findAll()
-        .then(genres => {
-            let respuesta = {
-                meta: {
-                    status : 200,
-                    total: genres.length,
-                    url: 'api/genres'
-                },
-                data: genres
-            }
+            .then(genres => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: genres.length,
+                        url: 'api/genres'
+                    },
+                    data: genres
+                }
                 res.json(respuesta);
             })
     },
-    
+
     'detail': (req, res) => {
         db.Genre.findByPk(req.params.id)
             .then(genre => {
@@ -43,7 +41,7 @@ const genresAPIController = {
             });
     },
     'genreMovies': (req, res) => {
-        db.Genre.findByPk(req.params.id,{
+        db.Genre.findByPk(req.params.id, {
             include: ['movies']
         })
             .then(genre => {

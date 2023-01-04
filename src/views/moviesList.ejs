@@ -22,12 +22,15 @@
     </p>
     <br>
     <ul>
-        <% for( let i = 0; i < movies.length; i++ ) { %>
-        <li>
-            <a  href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
-        </li>
-        <% } %>
-
+        <% for( let i=0; i < movies.length; i++ ) { %>
+            <li>
+                <a href="/movies/detail/<%= movies[i].id %>">
+                    <%= movies[i].title %>
+                </a>
+            </li>
+            <% } %>
     </ul>
+    <script src="/js/movieList.js"></script>
 </body>
+
 </html>
